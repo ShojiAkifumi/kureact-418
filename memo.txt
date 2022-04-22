@@ -1,0 +1,7 @@
+npx create-next-app kureact-418 --typescript
+
+npm install sass
+
+npm install @mui/material @emotion/react @emotion/styled
+
+ npm install firebase
