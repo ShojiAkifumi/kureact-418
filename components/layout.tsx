@@ -6,7 +6,6 @@ import theme from "./theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import { motion } from "framer-motion";
 type Props = {
-	title: string;
 	children: React.ReactNode;
 };
 export default function Layout(props: Props) {
