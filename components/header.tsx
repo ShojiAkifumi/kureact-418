@@ -1,9 +1,10 @@
-import { Box, Container, Link } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 import AppBar from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
 import CssBaseline from "@mui/material/CssBaseline";
 import React, { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
 	const [navToggle, setNavToggle] = useState("header-nav-wrapper");
@@ -22,7 +23,7 @@ export default function Header() {
 			<AppBar position="static" sx={{ padding: "16px 0" }}>
 				<Container>
 					<Box className="header-wrapper">
-						<Link href="/" underline="none">
+						<Link href="/" passHref>
 							<Typography variant="h1" className="header-logo">
 								Kureact-418
 							</Typography>
