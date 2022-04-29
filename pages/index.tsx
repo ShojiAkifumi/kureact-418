@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import type { NextPage } from "next";
 import Layout from "../components/layout";
-import PageHead from "./pagehead";
+import PageHead from "../components/pagehead";
 
 const Home: NextPage = () => {
 	return (

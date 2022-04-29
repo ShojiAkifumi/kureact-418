@@ -18,7 +18,7 @@ export default function Layout(props: Props) {
 				animate={{ opacity: 1, y: 0 }}
 				exit={{ opacity: 0, y: 10 }}
 				transition={{
-					duration: 0.5,
+					duration: 0.3,
 				}}
 			>
 				<Container sx={{ marginTop: { xs: "32px", md: "64px" } }}>

@@ -5,3 +5,10 @@ npm install sass
 npm install @mui/material @emotion/react @emotion/styled
 
  npm install firebase
+
+
+useEffectが二回実行される => 仕様だった
+
+Objects are not valid as a React child  => タイムスタンプを直接表示させようとしてエラー
+
+router.query.idがstring型とは限らないと怒られる => snapshot.idから取ることで解消
