@@ -3,9 +3,9 @@ import Layout from "../../components/layout";
 import PageHead from "../../components/pagehead";
 import { db } from "../../components/fire";
 import { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, query, orderBy, getDocs } from "firebase/firestore";
 
-import { Box, Paper } from "@mui/material";
+import { Box, Paper, TableContainer } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -19,7 +19,8 @@ const Memo: NextPage = () => {
 	const [memo, setMemo] = useState(memoData);
 	const [message, setMessage] = useState("読み込み中...");
 	useEffect(() => {
-		getDocs(collection(db, "memoData")).then((snapshot) => {
+		const q = query(collection(db, "memoData"), orderBy("time"));
+		getDocs(q).then((snapshot) => {
 			snapshot.forEach((document) => {
 				const doc = document.data();
 				memoData.push(
@@ -49,15 +50,22 @@ const Memo: NextPage = () => {
 					<Box component={"h2"} textAlign={"center"}>
 						{message}
 					</Box>
-					<Table>
-						<TableHead>
-							<TableRow>
-								<TableCell>title</TableCell>
-								<TableCell colSpan={2}>Content</TableCell>
-							</TableRow>
-						</TableHead>
-						<TableBody>{memo}</TableBody>
-					</Table>
+					<Box textAlign={"right"}>
+						<Link href="/memo/add" className={"add-btn"}>
+							追加
+						</Link>
+					</Box>
+					<TableContainer>
+						<Table sx={{ minWidth: 650 }}>
+							<TableHead>
+								<TableRow>
+									<TableCell>title</TableCell>
+									<TableCell colSpan={2}>Content</TableCell>
+								</TableRow>
+							</TableHead>
+							<TableBody>{memo}</TableBody>
+						</Table>
+					</TableContainer>
 				</Paper>
 			</Layout>
 		</>

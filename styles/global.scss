@@ -1,6 +1,6 @@
 @import "variables";
 @import "mixin";
-
+// ヘッダー
 .header-wrapper {
 	display: flex;
 	justify-content: space-between;
@@ -88,4 +88,9 @@
 			}
 		}
 	}
+}
+// ヘッダーここまで
+.memo-header {
+	display: flex;
+	align-items: center;
 }

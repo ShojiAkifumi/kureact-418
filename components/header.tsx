@@ -30,7 +30,7 @@ export default function Header() {
 						</Link>
 						<Box className={navToggle}>
 							<nav>
-								<Link href="/memo">投稿一覧</Link>
+								<Link href="/memo">メモ</Link>
 								<Link href="/memo/add">追加</Link>
 								<Link href="/login">ログイン</Link>
 							</nav>
