@@ -13,6 +13,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Button from "@mui/material/Button";
 import Link from "next/link";
+import { Add } from "@mui/icons-material";
 
 const Memo: NextPage = () => {
 	const memoData: JSX.Element[] = [];
@@ -51,8 +52,14 @@ const Memo: NextPage = () => {
 						{message}
 					</Box>
 					<Box textAlign={"right"}>
-						<Link href="/memo/add" className={"add-btn"}>
-							追加
+						<Link href="/memo/add">
+							<Button
+								variant="contained"
+								startIcon={<Add />}
+								sx={{ color: "#ffffff" }}
+							>
+								新規作成
+							</Button>
 						</Link>
 					</Box>
 					<TableContainer>
