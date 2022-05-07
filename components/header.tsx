@@ -31,6 +31,7 @@ export default function Header() {
 						<Box className={navToggle}>
 							<nav>
 								<Link href="/memo">メモ</Link>
+								<Link href="/auth/sign-out">サインアウト</Link>
 							</nav>
 							<div onClick={navToggleAction} className="hamburger">
 								<span></span>
